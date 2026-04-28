@@ -1,0 +1,33 @@
+/* =============================================================================
+ * Spotwork — Design Tokens
+ * 단일 진실 공급원: docs/hero.png 비주얼 톤 (라이트 스카이 / 로얄 블루 / 인디고 네이비)
+ * 임의 색상 추가/대체 금지. 변경 시 CLAUDE.md §4.2 동시 갱신.
+ * ============================================================================= */
+
+:root {
+  /* Surface — 하늘 그라디언트 / 카드 배경 */
+  --color-bg: #ffffff;
+  --color-bg-tint: #eaf2fb; /* Hero 옅은 스카이 블루 */
+  --color-bg-muted: #f5f8fc; /* 섹션 교차 배경 */
+
+  /* Text — 인디고 네이비 톤 */
+  --color-fg: #0f1f44;
+  --color-fg-strong: #1e3a8a;
+  --color-muted: #5a6b8c;
+  --color-border: #dce5f2;
+
+  /* Brand — 워커 조끼 / CTA 로얄 블루 */
+  --color-primary: #2d5fc9;
+  --color-primary-hover: #1f4aac;
+  --color-primary-soft: #4a7bd4;
+  --color-primary-bg: #e8f0fb;
+
+  /* Accent — 친환경 / 완료 인증 */
+  --color-accent: #22c55e;
+  --color-warning: #f59e0b;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}

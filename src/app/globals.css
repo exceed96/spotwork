@@ -1,0 +1,50 @@
+@import '../styles/fonts.css';
+@import '../styles/tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family:
+      'Pretendard',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Apple SD Gothic Neo',
+      'Segoe UI',
+      Roboto,
+      system-ui,
+      sans-serif;
+    font-feature-settings: 'ss06' 1; /* Pretendard 한글 자형 보정 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-hover);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+@layer utilities {
+  /* 한글 줄바꿈 자연화 — 단어 단위 break 방지 */
+  .text-balance {
+    text-wrap: balance;
+  }
+}

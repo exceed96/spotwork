@@ -10,6 +10,7 @@ import { ForUsersSection } from '@/components/sections/ForUsersSection';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { FinalCtaSection } from '@/components/sections/FinalCtaSection';
 import { faqContent } from '@/content/faq';
+import { Analytics } from "@vercel/analytics/next"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spotwork.kr';
 
@@ -39,6 +40,7 @@ const faqJsonLd = {
 export default function HomePage() {
   return (
     <>
+      <Analytics />
       <Header />
       <main>
         <HeroSection />

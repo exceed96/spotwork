@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spotwork.kr';
@@ -59,7 +60,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Pretendard 사전 연결로 첫 로드 지연 최소화 */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css';
+import Script from 'next/script';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spotwork.kr';
 
@@ -59,6 +60,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Pretendard 사전 연결로 첫 로드 지연 최소화 */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-gtag-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
       </head>
       <body>{children}</body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />

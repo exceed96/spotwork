@@ -23,7 +23,7 @@ export function Header() {
           <span className="text-lg font-bold tracking-tight text-fg-strong">스팟워크</span>
         </Link>
         <nav className="flex items-center gap-2" aria-label="주요 내비게이션">
-          <ButtonLink href="/">무료체험</ButtonLink>
+          <ButtonLink href="/" gaEventName="apply_free_trial">무료체험</ButtonLink>
         </nav>
       </Container>
     </header>

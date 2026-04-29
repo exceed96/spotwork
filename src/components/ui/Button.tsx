@@ -41,7 +41,7 @@ export function ButtonLink({
   href,
   variant = 'primary',
   size = 'md',
-  gaEventName = "apply_free_trial",
+  gaEventName,
   gaEventParams,
   className,
   children,

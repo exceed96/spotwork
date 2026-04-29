@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
+import { sendGAEvent } from '@next/third-parties/google';
+import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost';
@@ -10,6 +13,8 @@ interface ButtonLinkProps
   href: string;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  gaEventName?: string;
+  gaEventParams?: Record<string, string | number | boolean>;
   children: ReactNode;
 }
 
@@ -36,23 +41,35 @@ export function ButtonLink({
   href,
   variant = 'primary',
   size = 'md',
+  gaEventName,
+  gaEventParams,
   className,
   children,
+  onClick,
   ...rest
 }: ButtonLinkProps) {
   const classes = cn(BASE_STYLES, VARIANT_STYLES[variant], SIZE_STYLES[size], className);
   const isExternal = href.startsWith('mailto:') || href.startsWith('http');
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    onClick?.(event);
+    if (gaEventName) {
+      sendGAEvent('event', gaEventName, {
+        link_url: href,
+        ...gaEventParams,
+      });
+    }
+  };
 
   if (isExternal) {
     return (
-      <a className={classes} href={href} {...rest}>
+      <a className={classes} href={href} onClick={handleClick} {...rest}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={handleClick}>
       {children}
     </Link>
   );

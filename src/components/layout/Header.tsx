@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
+import { ButtonLink } from '@/components/ui/Button';
 
 export function Header() {
   return (
@@ -22,7 +23,7 @@ export function Header() {
           <span className="text-lg font-bold tracking-tight text-fg-strong">스팟워크</span>
         </Link>
         <nav className="flex items-center gap-2" aria-label="주요 내비게이션">
-          {/* 추후 내비게이션 항목 추가 위치 */}
+          <ButtonLink href="/">무료체험</ButtonLink>
         </nav>
       </Container>
     </header>

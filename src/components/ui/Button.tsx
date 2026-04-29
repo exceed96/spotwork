@@ -53,7 +53,6 @@ export function ButtonLink({
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(event);
     if (gaEventName) {
-      console.log('GA Event:', gaEventName, { link_url: href, ...gaEventParams });
       sendGAEvent('event', gaEventName, {
         link_url: href,
         ...gaEventParams,

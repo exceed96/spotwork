@@ -50,8 +50,6 @@ next-env.d.ts
 .vercel/
 
 # ----- Environment variables (절대 커밋 금지) -------------------------------
-.env
-.env.*
 # .env.example 는 키 이름만 동기화하기 위해 커밋한다
 !.env.example
 

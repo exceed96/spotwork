@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import './globals.css';
 import { ClarityAnalytics } from '@/components/analytics/ClarityAnalytics';
+import { ReferralUtmInitializer } from '@/components/analytics/ReferralUtmInitializer';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spotwork.kr';
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
       </head>
       <body>
+        <ReferralUtmInitializer />
         <ClarityAnalytics />
         {children}
       </body>

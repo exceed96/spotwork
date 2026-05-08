@@ -25,25 +25,25 @@ export function Header() {
           </Link>
           <nav className="ml-2 flex flex-1 items-center justify-end gap-2" aria-label="주요 내비게이션">
             <ButtonLink
-              href="/worker"
-              gaEventName="worker_apply"
-              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex"
-            >
-              워커 신청
-            </ButtonLink>
-            <ButtonLink
-              href="/b2b"
-              gaEventName="b2b_inquiry"
-              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex"
-            >
-              기업도입 문의
-            </ButtonLink>
-            <ButtonLink
               href="/b2c"
               gaEventName="b2c_inquiry"
               className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex"
             >
-              개인구독 문의
+              <b>개인 무료</b>
+            </ButtonLink>
+            <ButtonLink
+              href="/b2b"
+              gaEventName="b2b_inquiry"
+              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(230,239,253)] text-black"
+            >
+              <b>기업 문의</b>
+            </ButtonLink>
+            <ButtonLink
+              href="/worker"
+              gaEventName="worker_apply"
+              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(61,69,85)]"
+            >
+              <b>워커 신청</b>
             </ButtonLink>
             <ButtonLink
               href="https://open.kakao.com/o/gILV3Bsi"
@@ -57,36 +57,51 @@ export function Header() {
                 alt=""
                 width={32}
                 height={32}
-                className="h-7 w-7 sm:h-8 sm:w-8"
+                className="hidden h-7 w-7 sm:block sm:h-8 sm:w-8"
               />
             </ButtonLink>
           </nav>
         </Container>
       </header>
       <div
-        className="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-2 sm:hidden"
+        className="fixed bottom-4 right-10 z-40 flex items-center gap-2 sm:hidden"
         aria-label="모바일 빠른 문의"
       >
         <ButtonLink
           href="/b2c"
           gaEventName="b2c_inquiry"
-          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-sm shadow-soft motion-reduce:animate-none"
+          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-xs sm:text-sm shadow-soft motion-reduce:animate-none"
         >
-          개인구독 문의
+          <b>개인 무료</b>
         </ButtonLink>
         <ButtonLink
           href="/b2b"
           gaEventName="b2b_inquiry"
-          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-sm shadow-soft motion-reduce:animate-none"
+          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-xs sm:text-sm shadow-soft motion-reduce:animate-none bg-[rgba(230,239,253)] text-black"
         >
-          기업도입 문의
+          <b>기업 문의</b>
         </ButtonLink>
         <ButtonLink
           href="/worker"
           gaEventName="worker_apply"
-          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-sm shadow-soft motion-reduce:animate-none"
+          className="h-11 animate-float-border-soft whitespace-nowrap border-2 border-white px-4 text-xs sm:text-sm shadow-soft motion-reduce:animate-none bg-[rgba(61,69,85)]"
         >
-          워커 신청
+          <b>워커 신청</b>
+        </ButtonLink>
+        <ButtonLink
+          href="https://open.kakao.com/o/gILV3Bsi"
+          variant="ghost"
+          gaEventName="apply_free_trial"
+          className="h-9 w-9 shrink-0 px-0 sm:h-11 sm:w-11 "
+          aria-label="카카오톡 문의"
+        >
+          <Image
+            src="/kakaotalk.svg"
+            alt=""
+            width={32}
+            height={32}
+            className="h-12 w-12 sm:h-8 sm:w-8"
+          />
         </ButtonLink>
       </div>
     </>

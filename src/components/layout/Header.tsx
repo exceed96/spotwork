@@ -34,14 +34,14 @@ export function Header() {
             <ButtonLink
               href="/b2b"
               gaEventName="b2b_inquiry"
-              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(230,239,253)] text-black"
+              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(230,239,253)] text-black hover:bg-primary hover:text-white"
             >
               <b>기업 문의</b>
             </ButtonLink>
             <ButtonLink
               href="/worker"
               gaEventName="worker_apply"
-              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(61,69,85)]"
+              className="hidden h-11 whitespace-nowrap px-5 text-sm sm:inline-flex bg-[rgba(61,69,85)] hover:bg-black hover:text-white"
             >
               <b>워커 신청</b>
             </ButtonLink>

@@ -41,6 +41,23 @@ const config: Config = {
       boxShadow: {
         soft: '0 1px 2px rgb(15 31 68 / 0.04), 0 4px 16px rgb(45 95 201 / 0.06)',
       },
+      keyframes: {
+        'float-border-soft': {
+          '0%, 100%': {
+            borderColor: 'rgb(255 255 255 / 0.45)',
+            boxShadow:
+              '0 1px 2px rgb(15 31 68 / 0.04), 0 4px 16px rgb(45 95 201 / 0.06), 0 0 0 1px rgb(255 255 255 / 0.2)',
+          },
+          '50%': {
+            borderColor: 'rgb(255 255 255 / 1)',
+            boxShadow:
+              '0 1px 2px rgb(15 31 68 / 0.06), 0 4px 20px rgb(45 95 201 / 0.14), 0 0 14px rgb(255 255 255 / 0.35)',
+          },
+        },
+      },
+      animation: {
+        'float-border-soft': 'float-border-soft 2.4s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

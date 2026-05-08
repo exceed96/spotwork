@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { ClarityAnalytics } from '@/components/analytics/ClarityAnalytics';
 import { ReferralUtmInitializer } from '@/components/analytics/ReferralUtmInitializer';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.spotwork.kr';
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -64,6 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <ReferralUtmInitializer />
+        {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
         <ClarityAnalytics />
         {children}
       </body>

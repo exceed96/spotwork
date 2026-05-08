@@ -231,6 +231,9 @@ export function WorkerApplyForm() {
           </button>
         </div>
       </div>
+      <p className="rounded-md bg-primary/10 px-3 py-2 text-xs font-semibold text-primary">
+        입력하신 개인정보는 문의/신청 처리 목적 외에는 사용되지 않습니다.
+      </p>
       {submitError ? <p className="text-sm text-warning">{submitError}</p> : null}
       {submitted ? <p className="text-sm text-primary">신청이 접수되었습니다.</p> : null}
     </form>
